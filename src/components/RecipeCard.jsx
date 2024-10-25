@@ -8,7 +8,14 @@ const RecipeCard = ({ recipe }) => {
     return (
         <Link href={`/recipe-list/${recipe.id}`}>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <Image src={recipe.image} alt={recipe.name} className="w-full h-48 object-cover" />
+                {/* Specify width and height for the Image component */}
+                <Image
+                    src={recipe.image}
+                    alt={recipe.name}
+                    width={500} // Set a specific width
+                    height={200} // Set a specific height
+                    className="w-full h-48 object-cover"
+                />
                 <div className="p-4">
                     <h3 className="text-lg font-semibold mb-2">{recipe.name}</h3>
                     <p className="text-sm text-gray-500 mb-1">Cuisine: {recipe.cuisine}</p>

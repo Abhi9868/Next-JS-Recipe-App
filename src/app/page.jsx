@@ -29,12 +29,18 @@ const Home = () => {
       {/* Image Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-10">
         {[
-          "https://cdn.dummyjson.com/recipe-images/39.webp",
-          "https://cdn.dummyjson.com/recipe-images/36.webp",
-          "https://cdn.dummyjson.com/recipe-images/12.webp"
-        ].map((image, index) => (
+          { src: "https://cdn.dummyjson.com/recipe-images/39.webp", width: 160, height: 160 },
+          { src: "https://cdn.dummyjson.com/recipe-images/36.webp", width: 160, height: 160 },
+          { src: "https://cdn.dummyjson.com/recipe-images/12.webp", width: 160, height: 160 }
+        ].map(({ src, width, height }, index) => (
           <div key={index} className="overflow-hidden rounded-full shadow-lg animate-bounce transition-transform transform hover:scale-105">
-            <Image src={image} alt={`Recipe ${index + 1}`} className="w-40 h-40 object-cover" />
+            <Image
+              src={src}
+              alt={`Recipe ${index + 1}`}
+              width={width}
+              height={height}
+              className="w-40 h-40 object-cover"
+            />
           </div>
         ))}
       </div>

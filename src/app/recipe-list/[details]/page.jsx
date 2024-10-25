@@ -17,7 +17,7 @@ const fetchRecipesDetails = async (recipeId) => {
 };
 
 const RecipeDetails = async ({ params }) => {
-    const { details } = await params; // Destructure the parameters
+    const { details } = await params; // Destructure the parameters directly
     const recipeDetails = await fetchRecipesDetails(details); // Fetch recipe details
 
     return (
@@ -28,6 +28,8 @@ const RecipeDetails = async ({ params }) => {
             <Image
                 src={recipeDetails.image}
                 alt={recipeDetails.name}
+                width={500} // Specify width
+                height={300} // Specify height
                 className="w-full h-64 object-cover rounded-lg shadow-md mb-6 transition-transform transform hover:scale-105"
             />
 
@@ -73,6 +75,7 @@ const RecipeDetails = async ({ params }) => {
                     <span className="font-semibold text-gray-800">Calories per Serving:</span> {recipeDetails.caloriesPerServing}
                 </div>
             </div>
+
             {/* Go Back Button */}
             <Link href="/recipe-list">
                 <button
