@@ -1,5 +1,6 @@
 // components/RecipeCard.js
 
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,7 +8,7 @@ const RecipeCard = ({ recipe }) => {
     return (
         <Link href={`/recipe-list/${recipe.id}`}>
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src={recipe.image} alt={recipe.name} className="w-full h-48 object-cover" />
+                <Image src={recipe.image} alt={recipe.name} className="w-full h-48 object-cover" />
                 <div className="p-4">
                     <h3 className="text-lg font-semibold mb-2">{recipe.name}</h3>
                     <p className="text-sm text-gray-500 mb-1">Cuisine: {recipe.cuisine}</p>

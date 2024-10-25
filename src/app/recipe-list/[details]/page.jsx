@@ -1,5 +1,6 @@
 // components/RecipeDetails.js
 
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -24,7 +25,7 @@ const RecipeDetails = async ({ params }) => {
             <h1 className="text-4xl font-bold mb-4 text-center text-purple-600 transition-transform transform hover:scale-105">
                 {recipeDetails.name}
             </h1>
-            <img
+            <Image
                 src={recipeDetails.image}
                 alt={recipeDetails.name}
                 className="w-full h-64 object-cover rounded-lg shadow-md mb-6 transition-transform transform hover:scale-105"

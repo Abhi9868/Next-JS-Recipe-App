@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -14,7 +15,7 @@ const Home = () => {
       </p>
       <p className="text-md mb-6">
         Join our community to share your culinary creations, swap tips, and find inspiration
-        for your next meal. Don't forget to check out our seasonal collections for the freshest ideas!
+        for your next meal. Don&apos;t forget to check out our seasonal collections for the freshest ideas!
       </p>
 
       {/* Gradient Button */}
@@ -33,7 +34,7 @@ const Home = () => {
           "https://cdn.dummyjson.com/recipe-images/12.webp"
         ].map((image, index) => (
           <div key={index} className="overflow-hidden rounded-full shadow-lg animate-bounce transition-transform transform hover:scale-105">
-            <img src={image} alt={`Recipe ${index + 1}`} className="w-40 h-40 object-cover" />
+            <Image src={image} alt={`Recipe ${index + 1}`} className="w-40 h-40 object-cover" />
           </div>
         ))}
       </div>
